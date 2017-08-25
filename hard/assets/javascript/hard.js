@@ -35,8 +35,40 @@
    //code in here wont run until page loads
    $(function(){
 
-
-
+/////////////////TOGGLE TITLE COLOR ///////////////////////
+    var title = $( ".panel h1" )
+    title.click(function(){
+        if ($(this).css('color') != 'rgb(255, 0, 0)') {
+          $(this).css('color', 'red');
+        }
+        else {
+          $(this).css('color', 'black');
+        }
+      })
    })
 
+////////////////////HIDE ODD ROWS//////////////////////
+
+var oddRows = $(".title:even")
+  console.log(oddRows)
+  oddRows.hide();
  })();
+
+////////////////////REPLACE BACON//////////////////////
+
+$("large-10 .columns p").text($("large-10 .columns p").text().replace("Bacon", "LASER VISION"));
+
+
+
+
+
+////////////////////REMOVE LAST TWO POSTS//////////////////////
+
+$( ".post" ).last().remove();
+$( ".post" ).last().remove();
+
+
+
+////////////////////REMOVE IMAGES FROM ASIDE//////////////////////
+
+$(".large-3.columns.hide-for-small p img").remove();

@@ -42,8 +42,74 @@
   //code in here wont run until page loads
   $(function(){
 
+    var teamOne         = $("#teamone-shoot");
+    var teamOneShoot    = $("#teamone-numshots");
+    var goalsOne        = $("#teamone-numhits");
+
+    var teamTwo         = $("#teamtwo-shoot");
+    var teamTwoShoot    = $("#teamtwo-numshots");
+    var goalsTwo        = $("#teamtwo-numhits");
+
+    var reset           = $("#reset");
+    var numReset        = $("#num-resets");
 
 
-  })
 
+////////////////////////////////  TEAM ONE ////////////////////////////////
+    teamOne.click(function(){
+      var newCounterValue = parseInt(teamOneShoot.html()) + 1;
+      teamOneShoot.html(newCounterValue);
+
+      console.log(Math.random())
+        if (Math.random() > .6) {
+        var newScore = parseInt(goalsOne.html()) + 1;
+
+          goalsOne.html(newScore);
+          $("body").css({
+            backgroundColor: 'yellow'
+          })
+      }
+
+    });
+
+
+
+////////////////////////////////  TEAM TWO ////////////////////////////////
+    teamTwo.click(function(){
+      var newCounterValue = parseInt(teamTwoShoot.html()) + 1;
+      teamTwoShoot.html(newCounterValue);
+
+      console.log(Math.random())
+        if (Math.random() > .6) {
+        var newScore = parseInt(goalsTwo.html()) + 1;
+
+        goalsTwo.html(newScore)
+        $("body").css({
+          backgroundColor: 'green'
+        })
+      }
+    });
+
+
+
+
+////////////////////////////////  RESET ////////////////////////////////
+    reset.click(function(){
+      var clearValues = 0
+      teamOneShoot.html(clearValues);
+      goalsOne.html(clearValues)
+      teamTwoShoot.html(clearValues);
+      goalsTwo.html(clearValues)
+
+      var count = parseInt(numReset.html()) + 1;
+      numReset.html(count);
+      $("body").css({
+        backgroundColor: 'white'
+      })
+    });
+
+
+
+
+  });
 })();
